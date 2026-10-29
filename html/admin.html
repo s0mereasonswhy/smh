@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Panel QR – Chyb i Chwost</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f2e8;
+        --ink: #2a2118;
+        --mut: #76695a;
+        --card: #fcf9f2;
+        --line: #e2d8c3;
+        --forest: #1c3226;
+        --amber: #c2a06a;
+        --berry: #7d2f3c;
+        --shadow: 0 10px 28px rgba(60, 40, 10, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          16px/1.6 Georgia,
+          "Times New Roman",
+          serif;
+      }
+
+      header {
+        background: var(--forest);
+        color: #fdf3dc;
+      }
+
+      .hb {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 16px 18px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .badge {
+        color: var(--amber);
+        font:
+          700 12px system-ui,
+          sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .mh {
+        padding: 44px 18px 36px;
+        background: linear-gradient(150deg, #5c2430, #3a1a22 55%, #1c1410);
+        color: #fdf3dc;
+        text-align: center;
+      }
+
+      .mh h1 {
+        margin: 6px 0;
+        font:
+          400 clamp(36px, 8vw, 58px) Georgia,
+          "Times New Roman",
+          serif;
+      }
+
+      .mh p {
+        max-width: 540px;
+        margin: 6px auto 0;
+        color: #f0e4c8;
+      }
+
+      .eb {
+        color: var(--amber);
+        font:
+          700 12px system-ui,
+          sans-serif;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 18px 48px;
+      }
+
+      .card {
+        margin-top: 24px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      label {
+        display: block;
+        margin: 12px 0 4px;
+        font:
+          700 13px system-ui,
+          sans-serif;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: var(--card);
+        color: var(--ink);
+        font:
+          16px system-ui,
+          sans-serif;
+      }
+
+      .btns {
+        display: flex;
+        margin-top: 16px;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 12px 18px;
+        border: 0;
+        border-radius: 3px;
+        background: var(--amber);
+        color: #1c1408;
+        cursor: pointer;
+        font:
+          700 14px system-ui,
+          sans-serif;
+      }
+
+      .btn.dk {
+        background: var(--forest);
+        color: #fdf3dc;
+      }
+
+      .qrg {
+        display: grid;
+        margin-top: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 16px;
+      }
+
+      .qc {
+        padding: 14px;
+        border: 2px dashed var(--amber);
+        border-radius: 8px;
+        background: #fff;
+        color: var(--ink);
+        text-align: center;
+        break-inside: avoid;
+      }
+
+      .qc .q {
+        display: grid;
+        min-height: 150px;
+        margin: 8px 0;
+        place-items: center;
+      }
+
+      .qc b {
+        font:
+          700 18px Georgia,
+          "Times New Roman",
+          serif;
+      }
+
+      .qc small {
+        display: block;
+        color: var(--mut);
+        font:
+          12px system-ui,
+          sans-serif;
+      }
+
+      .note {
+        margin-top: 18px;
+        color: var(--mut);
+        font:
+          14px/1.5 system-ui,
+          sans-serif;
+      }
+
+      @media print {
+        header,
+        .noprint {
+          display: none !important;
+        }
+
+        .wrap {
+          padding: 0;
+        }
+      }
+    </style>
+    <script defer src="../js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="hb">
+        <div class="brand">Chyb i Chwost</div>
+        <div class="badge">Panel administratora</div>
+      </div>
+    </header>
+    <main id="app"></main>
+    <div id="fabw"></div>
+  </body>
+</html>
